@@ -1,24 +1,49 @@
 import React from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
 //create your first component
-export function Home() {
-	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+export class Home extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			fetchData: []
+		};
+	}
+
+	ComponentDidMount() {
+		fetch("https://assets.breatheco.de/apis/sound/")
+			.then(response => response.json())
+			.then(data => {
+				this.setState({ fetchData: data });
+				//console.log(this.state.fetchData);
+			});
+	}
+
+	render() {
+		return (
+			<div className="image-box">
+				<h1 className="text-center">Fetching</h1>
+				<div>
+					{this.state.fetchData.map((song, i) => {
+						return (
+							<div className="container" key={i}>
+								<ul>
+									<li>{song.name}</li>
+									<li>
+										<audio controls>
+											<source
+												src={
+													"https://assets.breatheco.de/apis/sound/songs" +
+													song.url
+												}
+											/>
+										</audio>
+									</li>
+								</ul>
+							</div>
+						);
+					})}
+				</div>
+			</div>
+		);
+	}
 }
