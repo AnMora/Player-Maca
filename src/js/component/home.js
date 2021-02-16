@@ -7,19 +7,13 @@ export class Home extends React.Component {
 		this.audio = null;
 		this.state = {
 			currentIndex: 1,
-			clicked: false,
 			songs: [
 				{
-					id: 1,
-					category: "game",
-					name: "Game Over",
-					url: "data/mario/fx_gameover.wav"
-				},
-				{
-					id: 2,
-					category: "game",
-					name: "Jump Super",
-					url: "data/mario/fx_jump_super.wav"
+					title: "South Park",
+					id: "south-park",
+					author: "Kyle",
+					url:
+						"https://assets.breatheco.de/apis/sound/files/cartoons/songs/south-park.mp3"
 				}
 			]
 		};
@@ -64,9 +58,8 @@ export class Home extends React.Component {
 								</p>
 							);
 						})}
-						;
 					</div>
-					<div className="container audioPlayer">
+					<div className="audioPlayer">
 						<div className="info">
 							<div className="cont">
 								<button
@@ -122,6 +115,7 @@ export class Home extends React.Component {
 						</div>
 					</div>
 				</div>
+				<audio ref={element => (this.audio = element)} />
 			</>
 		);
 		return <>{audioPlayer}</>;
