@@ -1,49 +1,32 @@
 import React from "react";
 
-//create your first component
+//create your first Player
 export class Home extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
+		this.audio = null;
 		this.state = {
-			fetchData: []
+			currenteIndex: 1,
+			songs: [
+				{
+					id: 1,
+					category: "game",
+					name: "Game Over",
+					url: "data/mario/fx_gameover.wav"
+				},
+				{
+					id: 2,
+					category: "game",
+					name: "Jump Super",
+					url: "data/mario/fx_jump_super.wav"
+				}
+			]
 		};
 	}
 
-	ComponentDidMount() {
-		fetch("https://assets.breatheco.de/apis/sound/")
-			.then(response => response.json())
-			.then(data => {
-				this.setState({ fetchData: data });
-				//console.log(this.state.fetchData);
-			});
-	}
-
-	render() {
-		return (
-			<div className="image-box">
-				<h1 className="text-center">Fetching</h1>
-				<div>
-					{this.state.fetchData.map((song, i) => {
-						return (
-							<div className="container" key={i}>
-								<ul>
-									<li>{song.name}</li>
-									<li>
-										<audio controls>
-											<source
-												src={
-													"https://assets.breatheco.de/apis/sound/songs" +
-													song.url
-												}
-											/>
-										</audio>
-									</li>
-								</ul>
-							</div>
-						);
-					})}
-				</div>
-			</div>
-		);
+	componentDidMount() {
+		fetch("https://assets.breatheco.de/apis/sound/songs")
+			.then(res => res.json())
+			.then(songs => this.setState({ songs }));
 	}
 }
