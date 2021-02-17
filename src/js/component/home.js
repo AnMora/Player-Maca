@@ -78,10 +78,10 @@ export class Home extends React.Component {
 										}>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
-											width="30"
-											height="30"
+											width="24"
+											height="24"
 											viewBox="0 0 24 24">
-											<path d="M4 2v20h-2v-20h2zm18 0l-16 10 16 10v-20z" />
+											<path d="M22 12c0 5.514-4.486 10-10 10s-10-4.486-10-10 4.486-10 10-10 10 4.486 10 10zm-22 0c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm13 0l5-4v8l-5-4zm-5 0l5-4v8l-5-4zm-2 4h2v-8h-2v8z" />
 										</svg>
 									</button>
 									<button
@@ -95,10 +95,10 @@ export class Home extends React.Component {
 										}>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
-											width="30"
-											height="30"
+											width="24"
+											height="24"
 											viewBox="0 0 24 24">
-											<path d="M3 22v-20l18 10-18 10z" />
+											<path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 18v-12l10 6-10 6z" />
 										</svg>
 									</button>
 									<button
@@ -112,10 +112,10 @@ export class Home extends React.Component {
 										}>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
-											width="30"
-											height="30"
+											width="24"
+											height="24"
 											viewBox="0 0 24 24">
-											<path d="M11 22h-4v-20h4v20zm6-20h-4v20h4v-20z" />
+											<path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5 7h-10v10h10v-10z" />
 										</svg>
 									</button>
 									<button
@@ -128,10 +128,10 @@ export class Home extends React.Component {
 										}>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
-											width="30"
-											height="30"
+											width="24"
+											height="24"
 											viewBox="0 0 24 24">
-											<path d="M19 12l-18 12v-24l18 12zm4-11h-4v22h4v-22z" />
+											<path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-6 16v-8l5 4-5 4zm5 0v-8l5 4-5 4zm7-8h-2v8h2v-8z" />
 										</svg>
 									</button>
 								</div>
