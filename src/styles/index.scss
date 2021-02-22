@@ -38,8 +38,8 @@
           justify-content: center; }
 
 #player .trackinfo {
-  top: 15px;
   position: relative;
+  background: -webkit-linear-gradient(left, #000 20%, transparent 100%);
   color: #fff; }
 
 #player .trackinfo p {
