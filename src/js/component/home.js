@@ -1,5 +1,6 @@
 import React from "react";
 //import { Article } from "react-bootstrap";
+import { Container, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 //create your first Player
 export class Home extends React.Component {
@@ -48,116 +49,240 @@ export class Home extends React.Component {
 	render() {
 		const audioPlayer = (
 			<>
-				<div className="reproductor">
-					<div id="player">
-						<img
+				<Container className="mt-1 mb-1">
+					<Card className="Crd">
+						<Card.Img
+							variant="top"
 							src="https://www.listchallenges.com/f/lists/6ec7e75c-611b-493f-b1c3-771188afd0e9.jpg"
-							className="cover"
-							id="art"
 						/>
-						<div className="trackinfo">
+						<ListGroup className="Crd text-light text-center list-group-flush">
 							{this.state.songs.map((song, index) => {
 								return (
-									<p
+									<ListGroupItem
 										id="title"
 										key={index}
 										onClick={() =>
 											this.play(this.state.currentIndex)
 										}>
 										{song.name}
-									</p>
+									</ListGroupItem>
 								);
 							})}
-						</div>
-						<div className="audioPlayer">
-							<div className="info">
-								<div className="cont">
-									<button
-										id="prev"
-										className="nave"
-										onClick={() =>
-											this.play(
-												this.state.currentIndex - 1
-											)
-										}>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24">
-											<path
-												fill="red"
-												d="M22 12c0 5.514-4.486 10-10 10s-10-4.486-10-10 4.486-10 10-10 10 4.486 10 10zm-22 0c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm13 0l5-4v8l-5-4zm-5 0l5-4v8l-5-4zm-2 4h2v-8h-2v8z"
-											/>
-										</svg>
-									</button>
-									<button
-										id="play"
-										className="nave"
-										ref={element =>
-											(this.playButton = element)
-										}
-										onClick={() =>
-											this.play(this.state.currentIndex)
-										}>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24">
-											<path
-												fill="red"
-												d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 18v-12l10 6-10 6z"
-											/>
-										</svg>
-									</button>
-									<button
-										id="pause"
-										className="nave"
-										ref={element =>
-											(this.pauseButton = element)
-										}
-										onClick={() =>
-											this.pause(this.state.currentIndex)
-										}>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24">
-											<path
-												fill="red"
-												d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5 7h-10v10h10v-10z"
-											/>
-										</svg>
-									</button>
-									<button
-										id="next"
-										className="nave"
-										onClick={() =>
-											this.play(
-												this.state.currentIndex + 1
-											)
-										}>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24">
-											<path
-												fill="red"
-												d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-6 16v-8l5 4-5 4zm5 0v-8l5 4-5 4zm7-8h-2v8h2v-8z"
-											/>
-										</svg>
-									</button>
+						</ListGroup>
+						<Card.Footer>
+							<div className="text-center audioPlayer">
+								<div className="info">
+									<div className="cont">
+										<button
+											id="prev"
+											className="nave"
+											onClick={() =>
+												this.play(
+													this.state.currentIndex - 1
+												)
+											}>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24">
+												<path
+													fill="red"
+													d="M22 12c0 5.514-4.486 10-10 10s-10-4.486-10-10 4.486-10 10-10 10 4.486 10 10zm-22 0c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm13 0l5-4v8l-5-4zm-5 0l5-4v8l-5-4zm-2 4h2v-8h-2v8z"
+												/>
+											</svg>
+										</button>
+										<button
+											id="play"
+											className="nave"
+											ref={element =>
+												(this.playButton = element)
+											}
+											onClick={() =>
+												this.play(
+													this.state.currentIndex
+												)
+											}>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24">
+												<path
+													fill="red"
+													d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 18v-12l10 6-10 6z"
+												/>
+											</svg>
+										</button>
+										<button
+											id="pause"
+											className="nave"
+											ref={element =>
+												(this.pauseButton = element)
+											}
+											onClick={() =>
+												this.pause(
+													this.state.currentIndex
+												)
+											}>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24">
+												<path
+													fill="red"
+													d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5 7h-10v10h10v-10z"
+												/>
+											</svg>
+										</button>
+										<button
+											id="next"
+											className="nave"
+											onClick={() =>
+												this.play(
+													this.state.currentIndex + 1
+												)
+											}>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24">
+												<path
+													fill="red"
+													d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-6 16v-8l5 4-5 4zm5 0v-8l5 4-5 4zm7-8h-2v8h2v-8z"
+												/>
+											</svg>
+										</button>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<audio ref={element => (this.audio = element)} />
-				</div>
+							<audio ref={element => (this.audio = element)} />
+						</Card.Footer>
+					</Card>
+				</Container>
 			</>
 		);
 		return <>{audioPlayer}</>;
 	}
+}
+
+{
+	/* <div className="offset-lg-3 col-12 col-lg-6 reproductor rounded-circle">
+        <div id="player">
+            <img
+                src="https://www.listchallenges.com/f/lists/6ec7e75c-611b-493f-b1c3-771188afd0e9.jpg"
+                className="cover"
+                id="art"
+            />
+            <div className="text-center trackinfo">
+                {this.state.songs.map((song, index) => {
+                    return (
+                        <p
+                            id="title"
+                            key={index}
+                            onClick={() =>
+                                this.play(
+                                    this.state.currentIndex
+                                )
+                            }>
+                            {song.name}
+                        </p>
+                    );
+                })}
+            </div>
+            <div className="audioPlayer">
+                <div className="info">
+                    <div className="cont">
+                        <button
+                            id="prev"
+                            className="nave"
+                            onClick={() =>
+                                this.play(
+                                    this.state
+                                        .currentIndex - 1
+                                )
+                            }>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24">
+                                <path
+                                    fill="red"
+                                    d="M22 12c0 5.514-4.486 10-10 10s-10-4.486-10-10 4.486-10 10-10 10 4.486 10 10zm-22 0c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm13 0l5-4v8l-5-4zm-5 0l5-4v8l-5-4zm-2 4h2v-8h-2v8z"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            id="play"
+                            className="nave"
+                            ref={element =>
+                                (this.playButton = element)
+                            }
+                            onClick={() =>
+                                this.play(
+                                    this.state.currentIndex
+                                )
+                            }>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24">
+                                <path
+                                    fill="red"
+                                    d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 18v-12l10 6-10 6z"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            id="pause"
+                            className="nave"
+                            ref={element =>
+                                (this.pauseButton = element)
+                            }
+                            onClick={() =>
+                                this.pause(
+                                    this.state.currentIndex
+                                )
+                            }>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24">
+                                <path
+                                    fill="red"
+                                    d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5 7h-10v10h10v-10z"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            id="next"
+                            className="nave"
+                            onClick={() =>
+                                this.play(
+                                    this.state
+                                        .currentIndex + 1
+                                )
+                            }>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24">
+                                <path
+                                    fill="red"
+                                    d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-6 16v-8l5 4-5 4zm5 0v-8l5 4-5 4zm7-8h-2v8h2v-8z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <audio ref={element => (this.audio = element)} />
+    </div> */
 }
